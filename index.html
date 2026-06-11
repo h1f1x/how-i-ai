@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>How I AI Examples</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --bg: #f7f7f4;
+      --panel: #ffffff;
+      --ink: #202124;
+      --muted: #6b6f76;
+      --line: #dfe1e5;
+      --accent: #2f6f73;
+      --accent-dark: #215257;
+      --amber: #9a6b1f;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--ink);
+      font: 15px/1.5 -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    header {
+      border-bottom: 1px solid var(--line);
+      background: var(--panel);
+    }
+
+    .shell {
+      width: min(1180px, calc(100vw - 32px));
+      margin: 0 auto;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      min-height: 72px;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(1.4rem, 2vw, 2rem);
+      line-height: 1.1;
+      font-weight: 700;
+      letter-spacing: 0;
+    }
+
+    .count {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 2.2rem;
+      height: 2.2rem;
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      color: var(--muted);
+      font-variant-numeric: tabular-nums;
+      background: #fbfbfa;
+    }
+
+    main {
+      padding: 28px 0 36px;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: minmax(260px, 360px) minmax(0, 1fr);
+      gap: 24px;
+      align-items: start;
+    }
+
+    .examples {
+      display: grid;
+      gap: 12px;
+    }
+
+    .example-card {
+      display: grid;
+      gap: 10px;
+      padding: 16px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--panel);
+    }
+
+    .example-title {
+      margin: 0;
+      font-size: 1rem;
+      line-height: 1.25;
+      letter-spacing: 0;
+    }
+
+    .example-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.86rem;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      min-height: 24px;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #eef5f4;
+      color: var(--accent-dark);
+      font-size: 0.8rem;
+      font-weight: 600;
+    }
+
+    .actions {
+      display: flex;
+      gap: 8px;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    a.button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 36px;
+      padding: 7px 12px;
+      border-radius: 6px;
+      border: 1px solid var(--accent);
+      background: var(--accent);
+      color: #fff;
+      text-decoration: none;
+      font-weight: 650;
+    }
+
+    a.button.secondary {
+      border-color: var(--line);
+      background: #fff;
+      color: var(--ink);
+    }
+
+    .preview {
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      overflow: hidden;
+      background: var(--panel);
+    }
+
+    .preview-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 48px;
+      padding: 10px 14px;
+      border-bottom: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.88rem;
+    }
+
+    .preview-bar strong {
+      color: var(--ink);
+      font-size: 0.95rem;
+    }
+
+    iframe {
+      display: block;
+      width: 100%;
+      height: min(760px, calc(100vh - 180px));
+      min-height: 520px;
+      border: 0;
+      background: #fff;
+    }
+
+    .notice {
+      color: var(--amber);
+      font-size: 0.86rem;
+    }
+
+    @media (max-width: 840px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+
+      .topbar {
+        align-items: flex-start;
+        flex-direction: column;
+        justify-content: center;
+        padding: 16px 0;
+      }
+
+      iframe {
+        height: 70vh;
+        min-height: 420px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="shell topbar">
+      <h1>How I AI Examples</h1>
+      <span class="count" aria-label="1 example">1</span>
+    </div>
+  </header>
+
+  <main class="shell">
+    <div class="layout">
+      <section class="examples" aria-label="Examples">
+        <article class="example-card">
+          <span class="tag">Report</span>
+          <h2 class="example-title">Hotel Valldemossa availability report</h2>
+          <div class="example-meta">
+            <span>Static HTML</span>
+            <span>2-night availability</span>
+          </div>
+          <div class="actions">
+            <a class="button" href="examples/valdemossa/report.html">Open</a>
+            <a class="button secondary" href="examples/valdemossa/report.html" target="_blank" rel="noopener">New tab</a>
+          </div>
+          <div class="notice">External images load from images.mirai.com.</div>
+        </article>
+      </section>
+
+      <section class="preview" aria-label="Selected example preview">
+        <div class="preview-bar">
+          <strong>Hotel Valldemossa availability report</strong>
+          <span>examples/valdemossa/report.html</span>
+        </div>
+        <iframe title="Hotel Valldemossa availability report" src="examples/valdemossa/report.html"></iframe>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
